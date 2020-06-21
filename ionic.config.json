@@ -1,5 +1,7 @@
 {
   "name": "csa",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

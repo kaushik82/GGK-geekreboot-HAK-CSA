@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CSA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br><br><br>
+  <ion-row>
+    <ion-col class="line" size="4">
+
+    </ion-col>
+    <ion-col size = "4" style="text-align: center;">
+      Login
+    </ion-col>
+    <ion-col class="line" size="4">
+
+    </ion-col>
+  </ion-row>
+  <br><br><br>
+
+  <form #form="ngForm" (ngSubmit)="loginUser(form)">
+    <div>
+      <ion-item>
+        <ion-input name ="email" type="email" placeholder="name@ggktech.com" ngModel required></ion-input>     
+      </ion-item>
+      <ion-item>
+        <ion-input name ="password" type="password" placeholder="password" ngModel required></ion-input>     
+      </ion-item>
+    </div>
+    <div style="text-align: center; margin: auto;"> 
+      <ion-button type="submit" [disabled]="form.invalid">Sign In</ion-button>
+    </div>
+  </form>  
+  <div style="text-align: center; margin: auto;"> 
+    <h6 (click)="goToReset()">forgot password?</h6>
+  </div>
+  <div style="text-align: center; margin: auto;">
+    <ion-text *ngIf="scanfingerprintmsg">
+      <p>{{scanfingerprintmsg}}</p>
+    </ion-text>
+  </div>
+</ion-content>

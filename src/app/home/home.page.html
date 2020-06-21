@@ -1,20 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br><br><br>
+  <ion-row>
+    <ion-col class="line" size="4">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </ion-col>
+    <ion-col size = "4" style="text-align: center;">
+      CSA
+    </ion-col>
+    <ion-col class="line" size="4">
+
+    </ion-col>
+  </ion-row>
+  <br><br><br>
+
+  <form #form="ngForm" (ngSubmit)="loginUser(form)">
+    <div>
+      <ion-item>
+        <ion-input name ="email" type="email" placeholder="name@ggktech.com" ngModel required></ion-input>     
+      </ion-item>
+      <ion-item>
+        <ion-input name ="password" type="password" placeholder="password" ngModel required></ion-input>     
+      </ion-item>
+    </div>
+    <div style="text-align: center; margin: auto;"> 
+      <ion-button type="submit" [disabled]="form.invalid">Sign In</ion-button>
+    </div>
+  </form>  
+  <div style="text-align: center; margin: auto;"> 
+    <h6 (click)="goToReset()">forgot password?</h6>
   </div>
 </ion-content>

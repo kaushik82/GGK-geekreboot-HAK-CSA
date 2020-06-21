@@ -1,0 +1,23 @@
+<!-- <ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">CSA</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+<ion-content [fullscreen]="true"> 
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <!--<ion-input type="text" [(ngModel)]="qrdata" hidden></ion-input>-->
+  <div style="text-align: center; margin: auto;"> 
+    <ion-button (click)="createCode()">Generate QR Code</ion-button>
+  </div>
+
+  <ion-card *ngIf="createdCode"  [disabled]="shouldDisable">
+    <ngx-qrcode  style="text-align: center; "  [value]="createdCode" ><ion-img class="test-class"></ion-img></ngx-qrcode>
+    <ion-card-content style="text-align: center;">
+      <p>code expires in {{ maxTime }} sec</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
